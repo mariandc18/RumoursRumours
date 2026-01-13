@@ -1,0 +1,10 @@
+{
+    "best_score": 0.6486871882750197,
+    "best_params": {
+        "solver": "liblinear",
+        "penalty": "l1",
+        "max_iter": 1000,
+        "class_weight": "balanced",
+        "C": 10
+    }
+}

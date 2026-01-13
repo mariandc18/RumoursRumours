@@ -1,0 +1,29 @@
+{
+    "classification_report": {
+        "non-rumours": {
+            "precision": 0.7571059431524548,
+            "recall": 0.7279503105590062,
+            "f1-score": 0.7422419252691577,
+            "support": 805.0
+        },
+        "rumours": {
+            "precision": 0.5714285714285714,
+            "recall": 0.6083333333333333,
+            "f1-score": 0.5893037336024218,
+            "support": 480.0
+        },
+        "accuracy": 0.6832684824902724,
+        "macro avg": {
+            "precision": 0.6642672572905131,
+            "recall": 0.6681418219461697,
+            "f1-score": 0.6657728294357897,
+            "support": 1285.0
+        },
+        "weighted avg": {
+            "precision": 0.6877478587731054,
+            "recall": 0.6832684824902724,
+            "f1-score": 0.6851132622341124,
+            "support": 1285.0
+        }
+    }
+}

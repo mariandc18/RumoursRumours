@@ -1,0 +1,22 @@
+{
+    "tweet_event": {
+        "charliehebdo-all-rnr-threads": 0,
+        "ebola-essien-all-rnr-threads": 1,
+        "ferguson-all-rnr-threads": 2,
+        "germanwings-crash-all-rnr-threads": 3,
+        "gurlitt-all-rnr-threads": 4,
+        "ottawashooting-all-rnr-threads": 5,
+        "prince-toronto-all-rnr-threads": 6,
+        "putinmissing-all-rnr-threads": 7,
+        "sydneysiege-all-rnr-threads": 8
+    },
+    "sentiment": {
+        "NEGATIVE": 0,
+        "NEUTRAL": 1,
+        "POSITIVE": 2
+    },
+    "classification": {
+        "non-rumours": 0,
+        "rumours": 1
+    }
+}
