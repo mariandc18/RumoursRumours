@@ -1,6 +1,6 @@
 # Detección de rumores en Twitter mediante características sociales y lingüísticas
 
-## 🧠 Sobre el Proyecto
+## 🔎 Sobre el Proyecto
 
 Este proyecto aborda el problema de la **detección de desinformación (rumores)** en redes sociales utilizando el **dataset PHEME**.  
 A diferencia de enfoques basados en análisis semántico del texto, este trabajo se centra en **características estructurales y de interacción social**, como:
@@ -9,6 +9,7 @@ A diferencia de enfoques basados en análisis semántico del texto, este trabajo
 - Número de favoritos  
 - Tipo de evento  
 - Dinámica de difusión del hilo  
+- Longitud de texto del tweet
 
 El objetivo principal es evaluar hasta qué punto estas señales permiten distinguir entre información verdadera y falsa **sin analizar directamente el contenido textual**.
 
@@ -56,46 +57,58 @@ El usuario debe descargarlo manualmente desde el enlace oficial y colocarlo en l
 ├── requirements.txt         # Dependencias del proyecto
 └── README.md
 
+```
 
 ---
 
-⚙️ **Instalación**
+## ⚙️ Instalación
 
 **Prerrequisitos**
-*   Python ≥ 3.9
-*   `pip` o `conda`
+- Python ≥ 3.9
+- `pip` o `conda`
 
 **Crear entorno virtual**
+
 ```bash
 python -m venv venv
 source venv/bin/activate   # Linux / Mac
 venv\Scripts\activate      # Windows
+```
 
 **Instalar dependencias**
+
 ```bash
 pip install -r requirements.txt
+```
 
-** Uso **
+---
+
+## Uso
 
 ### Preparación de los datos
-Una vez descargado el dataset desde el enlace oficial, colócalo en la carpeta data/raw/.
+
+Una vez descargado el dataset desde el enlace oficial, colócalo en la raíz del repositorio dentro de una carpera 'dataset'.
 
 Luego ejecuta:
 
 ```bash
 python src/preprocess/build_raw.py
+```
 
 Este script consolida el dataset completo en un único archivo CSV.
 A continuación, genera las características finales para entrenamiento:
 
 ```bash
 python src/preprocess/build_features.py
+```
 
-El dataset final se guardará en data/processed/.
+El dataset final se guardará en **data/processed/**.
 
 ### Ejecutar el pipeline completo de Machine Learning
+
 ```bash
 python run_all.py
+```
 
 Este comando ejecuta, en orden:
 
@@ -104,20 +117,33 @@ Este comando ejecuta, en orden:
 - Optimización de hiperparámetros
 - Evaluación final
 
-### Si se desea ejecutar solo una parte del pipeline:
-Entrenamiento de un modelo
+### Si se desea ejecutar solo una parte del pipeline
+
+#### Entrenamiento de un modelo en específico
 
 ```bash
 python scripts/train.py --model random_forest
+```
 
-Validación cruzada
+#### Validación cruzada
 
 ```bash
 python scripts/crossvalidation.py --model random_forest
+```
 
-Evaluación del modelo entrenado
+#### Evaluación del modelo entrenado
 
 ```bash
 python scripts/evaluate.py --model random_forest
+````
 
-Los resultados se almacenan automáticamente en la carpeta outputs/.
+Los resultados se almacenan automáticamente en la carpeta **outputs/**.
+
+---
+
+#### Modelos disponibles
+
+- random_forest
+- decision_tree
+- logistic_regression
+- xgboost
